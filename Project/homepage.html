@@ -1,0 +1,145 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Nani's Cafe</title>
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            margin: 0;
+            padding: 0;
+            background-color: #101112;
+            color: #fff;
+            perspective: 1000px;
+            transition: background-color 1s; 
+        }
+
+        header {
+            background-color: #3f4348;
+            color: white;
+            padding: 10px 20px;
+            animation: changeColor 5s infinite;
+        }
+
+        @keyframes changeColor {
+            0% { background-color: #333; }
+            50% { background-color: #3341ff; }
+            100% { background-color: #333; }
+        }
+
+        header h1 {
+            margin: 10;
+            font-size: 24px;
+        }
+
+        header nav a {
+            color: white;
+            text-decoration: none;
+            margin-right: 15px;
+        }
+
+        header nav a:hover {
+            text-decoration: underline;
+        }
+
+        .parent {
+    text-align: center;
+    margin-top: auto;
+    position: relative;
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+    gap: 20px; / Add space between flex items /
+    
+}
+
+
+        .child {
+            width: 250px;
+            height: 250px;
+            display: block;
+            margin: 0 auto;
+            border-radius: 20px;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+            transition: transform 0.3s;
+            transform-style: preserve-3d;
+            background-image: url('cafe.jpg'); 
+            background-size: cover;
+            background-position: center;
+            filter: brightness(80%) contrast(120%); / Enhance image /
+            
+        }
+
+        .child:hover {
+            transform: scale(1.05) rotateY(10deg);
+        }
+
+        .content{
+            position: absolute;
+            top: 130%;
+            left: 35%;
+            transform: translate(-50%, -50%) rotateY(-10deg);
+            background-color: rgba(105, 105, 105, 0.8);
+            padding: 20px;
+            border-radius: 10px;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+            max-width: 80%;
+            transition: transform 0.5s; 
+            text-align: left; / Align text to the left /
+            display: none; / Hide content by default /
+        }
+
+        .parent:hover .content {
+            display: block; / Show content on hover /
+            transform: translate(-50%, -50%) rotateY(0deg); 
+        }
+
+        .content h2 {
+            margin-top: 10px;
+            text-align: center; / Center the heading /
+        }
+
+        .content p {
+            margin-bottom: 10px; / Add margin between paragraphs /
+        }
+
+        .code {
+            font-family: Consolas, monospace;
+            background-color: #21252a;
+            color: #fff;
+            padding: 10px;
+            border-radius: 5px;
+            box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+            transform: rotateY(10deg);
+            margin-top: 20px;
+        }
+    </style>
+</head>
+<body>
+    <header>
+        <h1>Nani's Cafe</h1>
+        <nav>
+            <a href="homepage.html">Home</a>
+            <a href="Menu.html">Menu</a>
+            <a href="Bookings.html">Bookings</a>
+            <a href="contact.html">Contacts</a>
+        </nav>
+    </header>
+    
+    <div class="flex"><br>
+        <div class="child"></div><br>
+        <div class="flex-item" id="bookings">
+          <h2>Bookings :</h2>
+          <p>Host your next event at Nani's Cafe. Our cozy and charming space is Enjoy our deperfect for birthdays, bridal relaxing atm showers, and other special occasions. Contact us to inquire Visit us to about booking availability and special event menus.</p>
+        </div>
+        <div class="flex-item" id="events">
+          <h2>Events :</h2>
+          <p>Coming soon! We are preparing for special events. Stay tuned for more information.</p>
+        </div>
+      </div>
+    </div>
+    <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.9.3/dist/umd/popper.min.js"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
+</body>
+</html>
